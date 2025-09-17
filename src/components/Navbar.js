@@ -32,7 +32,7 @@ function Navbar() {
   return (
     <nav className="bg-white fixed top-0 w-full pl-6  z-50 ">
       <div className="hidden lg:flex pr-16  items-center justify-between py-3 text-blue-950 font-bold text-lg">
-        <Image src={logo} alt="logo" />
+        <Image src={logo} alt="logo"   priority={true}  />
 
         <ul className="flex items-center gap-0.5 font-bold">
           {menuItems.map((item) => (
@@ -65,7 +65,7 @@ function Navbar() {
       {/* Code for Mobile Menu */}
       <div className="relative bg-white lg:hidden">
         <div className="flex items-center justify-between px-4">
-          <Image src={logo} alt="logo" />
+          <Image src={logo} alt="logo" priority={true} />
 
           <button onClick={handleToggle}>
             {isOpen ? (
