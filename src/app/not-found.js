@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Page Not Found - SPS Clone',
+  description: '404 - The page you are looking for does not exist.',
+};
+
+
 export default function notFound(){
     return(
         <>

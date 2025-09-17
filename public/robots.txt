@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://spscopy.netlify.app/sitemap.xml

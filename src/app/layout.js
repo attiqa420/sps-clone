@@ -6,7 +6,12 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "SPS-Clone",
-  description: "this is a clone website",
+  description: 'Clone of SPS site built with Next.js and Tailwind CSS',
+  authors: [{ name: 'Attiqa JAbeen', url: 'https://spscopy.netlify.app/' }],
+   robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
