@@ -30,7 +30,7 @@ function Hero() {
         </div>
       </div>
       <div className="lg:col-span-6 col-span-12 relative">
-        <Image src={hero} alt="Hero image" className="w-full block" priority={true}  />
+        <Image src={hero} alt="Hero image" className="w-full block" priority={true}  sizes="(max-width: 768px) 100vw, 50vw" />
         <div className="absolute inset-0  flex flex-col items-center lg:pt-48 pt-28">
           <div className="text-white text-center">
             <div className="lg:text-3xl text-2xl font-bold">

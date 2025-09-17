@@ -10,13 +10,13 @@ function ServiceCard({ service }) {
           </h1>
 
           <ul className="list-none text-sm font-serif">
-            {service.description?.map((text, i) => (
+            {service.description.map((text, i) => (
               <li key={i}>{text}</li>
             ))}
           </ul>
         </div>
 
-        {service.features?.map((feature, index) => (
+        {service.features.map((feature, index) => (
           <div
             key={index}
             className="max-w-sm w-72 h-80 col-span-4 min-h-fit  rounded-2xl border-t-blue-950 border-8 border-b-0 
@@ -28,7 +28,7 @@ function ServiceCard({ service }) {
                   {feature.name}
                 </div>
                 <ul className="list-disc ml-5 text-sm text-[#363434] font-semibold">
-                  {feature.featuredes?.map((item, i) => (
+                  {feature.featuredes.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>

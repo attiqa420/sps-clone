@@ -21,6 +21,7 @@ function Products() {
               width={200}
               height={200}
               className="p-4"
+              sizes="(max-width: 768px) 180px, 200px"
             />
             {item.name == "AZALIO" || item.name == "MYID Self Verify" ? (
               <button className="bg-blue-950 text-white rounded-3xl px-6 py-2 border transition duration-300 hover:cursor-pointer hover:bg-white hover:text-blue-950 hover:border-blue-950">

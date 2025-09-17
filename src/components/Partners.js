@@ -19,6 +19,7 @@ function Partners() {
               height={100}
               alt="partners logo"
               className=" transition duration-500 hover:scale-75 "
+              sizes="(max-width: 768px) 80px, 100px"
             />
           </div>
         ))}

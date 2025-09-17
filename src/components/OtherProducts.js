@@ -15,6 +15,7 @@ function OtherProducts() {
             width={70}
             height={70}
             className="absolute -top-4"
+            sizes="(max-width: 768px) 60px, 70px"
           />
           <h1 className="py-4 text-lg font-bold text-[#363434]">{item.name}</h1>
           <p className="text-sm px-6">{item.desc}</p>
