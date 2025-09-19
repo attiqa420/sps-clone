@@ -6,19 +6,16 @@ import menuItems from "@/data/menuItems";
 import {
   ChevronDownIcon,
   Bars4Icon,
-  XMarkIcon,
-  ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 import SubMenu from "./SubMenu";
+import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isRotate, setIsRotate] = useState(false);
+ 
 
-  const rotateIcon = () => {
-    setIsRotate(!isRotate);
-  };
+ 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -61,47 +58,13 @@ function Navbar() {
           Intership Portal
         </button>
       </div>
-
-      {/* Code for Mobile Menu */}
-      <div className="relative bg-white lg:hidden">
-        <div className="flex items-center justify-between px-4">
-          <Image src={logo} alt="logo" priority={true} />
-
-          <button onClick={handleToggle}>
-            {isOpen ? (
-              <XMarkIcon className="w-7 h-7" />
-            ) : (
-              <Bars4Icon className="w-7 h-7" />
-            )}
-          </button>
-        </div>
-        {isOpen && (
-          <div className="flex flex-col  justify-between">
-            <ul>
-              {menuItems.map((item) => (
-                <li key={item.name} className="relative group">
-                  <Link
-                    href={item.path || "#"}
-                    className="inline-flex items-center"
-                  >
-                    <span> {item.name} </span>
-                    {item.submenu ? (
-                      <ChevronRightIcon
-                        className={`h-4 w-6 ${isRotate ? "rotate-90" : ""}`}
-                        onClick={rotateIcon}
-                      />
-                    ) : (
-                      <span className="h-4 w-6" />
-                    )}
-                  </Link>
-
-                  {item.submenu && <SubMenu submenu={item.submenu} />}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </div>
+      {/*Mobile Menu */}
+<div className="lg:hidden flex items-center justify-between p-3">
+ <Image src={logo} alt="logo"   priority={true}  />
+ <Bars4Icon className="text-blue-950 h-8 w-8" onClick={handleToggle} />
+</div>
+{isOpen && (<MobileMenu menuItems={menuItems} onClose={handleToggle} />)}
+      
     </nav>
   );
 }
