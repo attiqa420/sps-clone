@@ -3,11 +3,13 @@ import Image from "next/image";
 
 function Partners() {
   return (
-    <>
-      <div className=" mt-32  mx-auto text-center mb-10 text-[#363434]">
-        <h1 className="font-bold text-2xl ">Our Technology Partners</h1>
-      </div>
-      <div className=" grid grid-cols-2 place-items-center lg:flex lg:flex-row lg:flex-wrap lg:justify-center lg:items-center  gap-x-8 gap-y-4">
+    
+      <section className=" mt-16 mb-16 ">
+        <div className="text-center  text-[#363434]"> 
+        <h3 className="font-bold text-2xl pb-8">Our Technology Partners</h3>
+        </div>
+     <div className="flex justify-center ">
+      <div className=" grid grid-cols-2 place-items-center lg:grid-cols-5 2xl:grid-cols-7 gap-x-12 gap-y-4">
         {partnersData.map((item, index) => (
           <div
             key={index}
@@ -24,7 +26,8 @@ function Partners() {
           </div>
         ))}
       </div>
-    </>
+      </div>
+    </section>
   );
 }
 

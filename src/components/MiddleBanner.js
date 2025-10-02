@@ -1,12 +1,23 @@
 function MiddleBanner({ heading, subHeading, desc }) {
   return (
-    <div className="container w-full h-auto mt-20 mb-20 bg-linear-to-bl from-blue-950 to-blue-900 text-white py-12 px-12">
-      <div className="flex flex-col items-center text-center">
-        <h1 className="font-semibold text-3xl pb-4">{heading}</h1>
-        <h2 className="font-semibold text-xl">{subHeading}</h2>
-        <p >{desc}</p>
-      </div>
-    </div>
+  <section className="w-full h-auto mt-10 mb-10 bg-gradient-to-bl from-[#201942] to-[#342779] text-white py-12 px-4 md:px-12">
+  <div className="container mx-auto flex flex-col items-center text-center space-y-4 max-w-3xl">
+    
+    <h1 className="font-semibold text-3xl md:text-4xl lg:text-3xl">
+      {heading}
+    </h1>
+
+    <h2 className="font-medium text-xl md:text-2xl lg:text-xl">
+      {subHeading}
+    </h2>
+
+    <p className="text-base md:text-lg">
+      {desc}
+    </p>
+
+  </div>
+</section>
+
   );
 }
 

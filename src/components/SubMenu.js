@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 import SubMenu2 from "./SubMenu2";
@@ -8,7 +9,7 @@ function SubMenu({ submenu }) {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <ul className="absolute  w-56 bg-white text-blue-800 border-t-2 text-sm border-blue-800 shadow-lg z-50 font-bold  hidden group-hover:block">
+    <ul className="absolute w-56 bg-white text-[#2f5197] border-t-2 border-blue-800 shadow-lg z-50 font-medium text-base leading-[24px] hidden group-hover:block">
       {submenu.map((subItem, index) => (
         <li
           key={index}
@@ -16,24 +17,30 @@ function SubMenu({ submenu }) {
           onMouseEnter={() => setHovered(index)}
           onMouseLeave={() => setHovered(null)}
         >
-          {subItem.path ? (
-            <Link
-              href={subItem.path || "#"}
-              target={subItem.target || "_self"}
-              className="flex items-center justify-between"
-            >
-              <span>{subItem.name}</span>
-            </Link>
-          ) : (
-            <span>{subItem.name}</span>
-          )}
+          <div className="flex items-center justify-between">
+            {subItem.path ? (
+              <Link
+                href={subItem.path}
+                target={subItem.target || "_self"}
+                className="flex-1"
+              >
+                {subItem.name}
+              </Link>
+            ) : (
+              <span className="flex-1">{subItem.name}</span>
+            )}
 
-          {subItem.submenu1 ? (
-            <ArrowLongRightIcon className="h-4 w-4 absolute right-2 top-1/2 " />
-          ) : null}
+            {/* Show arrow if submenu1 exists */}
+            {subItem.submenu1 && (
+              <ArrowLongRightIcon className="h-4 w-4 ml-2 text-blue-800" />
+            )}
+          </div>
 
+          {/* Show SubMenu2 if hovered */}
           {subItem.submenu1 && hovered === index && (
-            <SubMenu2 submenu2={subItem.submenu1} />
+            <div className="absolute top-0 left-full">
+              <SubMenu2 submenu2={subItem.submenu1} />
+            </div>
           )}
         </li>
       ))}

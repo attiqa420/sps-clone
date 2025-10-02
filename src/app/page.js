@@ -10,10 +10,25 @@ import ServiceCard from "@/components/ServiceCard";
 import Verticals from "@/components/Verticals";
 
 import services from "@/data/services";
-import { useState } from "react";
+import { useEffect,useRef,useState } from "react";
 
 export default function Home() {
   const [service, setService] = useState(services[1]);
+ const cardRef = useRef(null);
+
+  useEffect(() => {
+  if (cardRef.current) {
+    cardRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center", 
+    });
+  }
+}, [service]); 
+
+  const handleServiceClick = (service) => {
+    setService(service); 
+
+  };
 
   return (
     <>
@@ -21,10 +36,13 @@ export default function Home() {
         <Hero />
         <MiddleSection
           services={services}
-          setService={setService}
+           setService={handleServiceClick}
           activeService={service}
         />
-        <ServiceCard service={service} />
+        <div ref={cardRef}>
+           <ServiceCard service={service} />
+        </div>
+       
         <MiddleBanner
           heading="Our Startups"
           subHeading="Digital solutions we have built for ourselves and our customers"

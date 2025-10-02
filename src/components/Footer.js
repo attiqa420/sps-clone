@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className=" bg-[#0a0e1a] ">
+    <section id="Footer" className=" bg-[#0a0e1a] ">
     <div className="flex lg:flex-row flex-col lg:items-center justify-between text-white lg:px-16 lg:py-14 py-6 px-7">
       <div className="min-h-36 h-64 lg:w-82 ">
         <h1 className="text-2xl font-bold pb-4">Business Groups</h1>
@@ -40,7 +40,7 @@ function Footer() {
       </div>
      </div>
       <div className="text-[#c0c2ce] border-t border-t-gray-500 py-6"> <span className=" py-6 px-12">© 2025 SPS, All Rights Reserved.</span></div>
-    </div>
+    </section>
   );
 }
 
