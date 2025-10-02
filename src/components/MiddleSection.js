@@ -27,7 +27,7 @@ function MiddleSection({ services, setService, activeService }) {
      
         <div className="flex-grow flex items-center justify-center w-full">
           <h4 className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg leading-snug">
-            Whether you're an entrepreneur or enterprise, we help bring your vision to life.
+            Whether you&apos;re an entrepreneur or enterprise, we help bring your vision to life.
           </h4>
         </div>
 
